@@ -19,6 +19,7 @@ class Atm:
     This ensures persistent storage of user account data across program runs.'''
         self.file_path = 'data/users.json'
         self.users = self.load_users()
+        self.start()
 # --------------------------------------------------
 
     def load_users(self) -> Dict[str, Dict[str, Any]]:
@@ -618,3 +619,5 @@ SELECT THE SERVICE YOU WANT TO USE: ''')
         print(f"TOTAL SEND: {total_send}")
         print(F"TOTAL RECEIVED: {total_receive}")
         print(f"NET TRANSFER AMOUNT: {total_receive-total_send}")
+
+obj = Atm()
